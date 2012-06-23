@@ -1,4 +1,4 @@
-var sys = require('sys'),
+var util = require('util'),
 cloud = require('./lib/cloudapp');
 
 var types = ['all', 'image', 'bookmark', 'text', 'archive', 'audio', 'video', 'unknown'];
@@ -31,40 +31,40 @@ switch (process.argv[0]) {
   case 'help':
     switch (process.argv[1]) {
       case 'list':
-        sys.puts('list your files');
-        sys.puts('params :');
-        sys.puts('  - page (1) : page number starting at 1');
-        sys.puts('  - limit (10) : define the number of item per page');
-        sys.puts('  - type (all) : type of file (all, image, bookmark,');
-        sys.puts('                 text, archive, audio, video, or unknown)');
-        sys.puts('  - deleted (true) : show deleted items');
+        util.puts('list your files');
+        util.puts('params :');
+        util.puts('  - page (1) : page number starting at 1');
+        util.puts('  - limit (10) : define the number of item per page');
+        util.puts('  - type (all) : type of file (all, image, bookmark,');
+        util.puts('                 text, archive, audio, video, or unknown)');
+        util.puts('  - deleted (true) : show deleted items');
       break;
       case 'push':
-        sys.puts('upload file named filename');
-        sys.puts('params :');
-        sys.puts('  - filename : relative file name');
+        util.puts('upload file named filename');
+        util.puts('params :');
+        util.puts('  - filename : relative file name');
       break;
       case 'info':
 
       break;
       case 'bookmark':
-        sys.puts('save defined bookmark');
-        sys.puts('params :');
-        sys.puts('  - link : bookmark\'s url');
-        sys.puts('  - name (link) : name, ie: website name');
+        util.puts('save defined bookmark');
+        util.puts('params :');
+        util.puts('  - link : bookmark\'s url');
+        util.puts('  - name (link) : name, ie: website name');
       break;
       case 'info':
-        sys.puts('display informations about one of your files');
-        sys.puts('params :');
-        sys.puts('  - slug : file\'s unique id');
+        util.puts('display informations about one of your files');
+        util.puts('params :');
+        util.puts('  - slug : file\'s unique id');
       break;
     }
   default:
-    sys.puts('usage : node app.js username password action [options]...');
-    sys.puts('actions :');
-    sys.puts('  - list [page] [limit] [type] [deleted] : list your files');
-    sys.puts('  - push filename : upload a file');
-    sys.puts('  - bookmark link [name] : save a bookmark');
-    sys.puts('  - info slug : retrieve some information about a file');
-    sys.puts('  - help command : display some help about the command');
+    util.puts('usage : node app.js username password action [options]...');
+    util.puts('actions :');
+    util.puts('  - list [page] [limit] [type] [deleted] : list your files');
+    util.puts('  - push filename : upload a file');
+    util.puts('  - bookmark link [name] : save a bookmark');
+    util.puts('  - info slug : retrieve some information about a file');
+    util.puts('  - help command : display some help about the command');
 }
