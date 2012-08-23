@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/sdepold/node-cloudapp.png)](http://travis-ci.org/sdepold/node-cloudapp)
 Node-cloudapp
 ===
 
